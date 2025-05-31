@@ -1,4 +1,3 @@
-package BankingSystem;
 import java.util.*;
 
 public class Main {
@@ -23,26 +22,24 @@ public class Main {
             System.out.println("Enter the amount you want to deposit");
             double deposit= sc.nextDouble();
             customer.deposit(deposit);
-            if(deposit <= 0){
-                break;
+
+            if(deposit > 0) {
+                System.out.println("Enter the amount you want to withdraw");
+                double withdraw = sc.nextDouble();
+                sc.nextLine();
+                customer.withdraw(withdraw);
+
+                System.out.println("Enter the name of the person whom you want to transfer");
+                String pName = sc.nextLine();
+                System.out.println("Amount to be transferred: ");
+                double transfer = sc.nextDouble();
+                customer.transfer(transfer, pName);
+
+                System.out.println("Final Balance: " + customer.getBalance());
+                System.out.println("Total Transactions made: " + customer.getTrCount());
             }
 
-            System.out.println("Enter the amount you want to withdraw");
-            double withdraw= sc.nextDouble();
             sc.nextLine();
-            customer.withdraw(withdraw);
-
-            System.out.println("Enter the name of the person whom you want to transfer");
-            String pName= sc.nextLine();
-            System.out.println("Amount to be transferred: ");
-            double transfer= sc.nextDouble();
-            sc.nextLine();
-            customer.transfer(transfer, pName);
-
-            System.out.println("Final Balance: " + customer.getBalance());
-            System.out.println("Total Transactions made: " + customer.getTrCount());
-
-
             System.out.println("Do you want to create new account, do the transactions and print the results? yes or no");
             String answer = sc.nextLine().toLowerCase();
 
