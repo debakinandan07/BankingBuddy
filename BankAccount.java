@@ -1,5 +1,3 @@
-package BankingSystem;
-
 public class BankAccount {
 
     private double balance= 0;
