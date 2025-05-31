@@ -1,5 +1,3 @@
-package BankingSystem;
-
 public class Customer {
     String name;
     int accountNum;
